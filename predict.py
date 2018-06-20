@@ -13,4 +13,4 @@ if result[0][0] == 1.0:
     prediction = 'dog'
 else:
     prediction = 'cat'
-    print(prediction)
+print(prediction)
