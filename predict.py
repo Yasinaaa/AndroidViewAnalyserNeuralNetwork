@@ -2,7 +2,7 @@ import numpy as np
 from keras.preprocessing import image
 from keras.models import load_model
 
-test_image = image.load_img('dataset/single_prediction/test3.PNG', target_size = (64, 64))
+test_image = image.load_img('dataset/single_prediction/test2.PNG', target_size = (24, 24))
 
 test_image = image.img_to_array(test_image)
 test_image = np.expand_dims(test_image, axis = 0)

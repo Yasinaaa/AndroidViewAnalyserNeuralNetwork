@@ -8,7 +8,7 @@ from keras.layers import Dense
 classifier = Sequential()
 
 # Step 1 - Convolution
-classifier.add(Conv2D(32, (3, 3), input_shape=(64, 64, 3), activation='relu'))
+classifier.add(Conv2D(32, (3, 3), input_shape=(24, 24, 3), activation='relu'))
 
 # Step 2 - Pooling
 classifier.add(MaxPooling2D(pool_size=(2, 2)))
@@ -39,12 +39,12 @@ train_datagen = ImageDataGenerator(rescale=1./255,
 test_datagen = ImageDataGenerator(rescale=1./255)
 
 training_set = train_datagen.flow_from_directory('dataset/train',
-                                                 target_size=(64, 64),
+                                                 target_size=(24, 24),
                                                  batch_size=32,
                                                  class_mode='binary')
 
 classifier.fit_generator(training_set,
-                         steps_per_epoch=261,
+                         steps_per_epoch=4236,
                          epochs=25,
                          validation_data=training_set,
                          validation_steps=100)
